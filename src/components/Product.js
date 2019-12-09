@@ -1,8 +1,6 @@
-import React,{useContext} from 'react';
-import ProductContext from '../contexts/ProductContext';
+import React from 'react';
 
 const Product = props => {
-	const mainContext = useContext(ProductContext)
 	return (
 		<div className="product">
 			<img src={props.product.image} alt={`${props.product.title} book`} />
@@ -11,7 +9,7 @@ const Product = props => {
 
 			<p className="price">${props.product.price}</p>
 
-			<button onClick={mainContext.addItem}>
+			<button onClick={()=>props.addItem(props.product)}>
 				Add to cart
 			</button>
 		</div>
